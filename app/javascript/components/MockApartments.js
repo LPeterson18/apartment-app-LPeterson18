@@ -1,0 +1,42 @@
+let apartments = [
+{
+  id:1,
+  street:'1234 North Street',
+  city:'Minneapolis',
+  state:'MN',
+  manager:'Bill',
+  email:'bill@email.com',
+  price:'$1000',
+  bedrooms:4,
+  bathrooms:3,
+  pets:'yes',
+  user_id:1,
+},
+{
+  id:2,
+  street:'5678 South Avenue',
+  city:'Fort Worth',
+  state:'TX',
+  manager:'Linda',
+  email:'linda@email.com',
+  price:'$1500',
+  bedrooms:1,
+  bathrooms:1,
+  pets:'no',
+  user_id:2,
+},
+{
+  id:3,
+  street:'9876 West Lane',
+  city:'Duluth',
+  state:'MN',
+  manager:'Greg',
+  email:'greg@email.com',
+  price:'$2000',
+  bedrooms:2,
+  bathrooms:2,
+  pets:'yes',
+  user_id:1,
+}
+]
+export default apartments;
