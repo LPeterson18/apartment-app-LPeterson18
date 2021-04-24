@@ -16,6 +16,7 @@ class ApartmentEdit extends React.Component {
           bedrooms:0,
           bathrooms:0,
           pets:'',
+          image:'',
         },
 
         submitted: false,
@@ -39,7 +40,7 @@ class ApartmentEdit extends React.Component {
         <h1>ApartmentEdit</h1>
         <Row>
           <Col sm={{ size: 6, order: 2, offset: 3 }}>
-            <h2>List a new apartment:</h2>
+            <h2>Edit {this.props.apartment.street}, {this.props.apartment.state}:</h2>
             <Form>
               <FormGroup>
                 <Label for='street'>Street</Label>
@@ -119,6 +120,15 @@ class ApartmentEdit extends React.Component {
                     type='text'
                     name='pets'
                     value={this.state.pets}
+                    onChange={this.handleChange}
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <Label for='image'>Add Apartment Image URL</Label>
+                  <Input
+                    type='text'
+                    name='image'
+                    value={this.state.image}
                     onChange={this.handleChange}
                   />
                 </FormGroup>

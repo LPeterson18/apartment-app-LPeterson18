@@ -12,14 +12,14 @@ import {
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom'
 
-class ApartmentIndex extends Component {
+class UserApartmentIndex extends Component {
 
   render() {
     return (
       <React.Fragment>
         <h2>ApartmentIndex</h2>
         <Row sm='4'>
-          {this.props.apartments.map((apartment) => {
+          {this.props.usersApartments && this.props.usersApartments.map((apartment) => {
             return (
               <Col key={apartment.id} sm='4'>
                 <Card>
@@ -41,4 +41,4 @@ class ApartmentIndex extends Component {
   }
 }
 
-export default ApartmentIndex
+export default UserApartmentIndex

@@ -5,6 +5,7 @@ import ApartmentEdit from './pages/ApartmentEdit'
 import ApartmentNew from './pages/ApartmentNew'
 import ApartmentIndex from './pages/ApartmentIndex'
 import ApartmentShow from './pages/ApartmentShow'
+import UserApartmentIndex from './pages/UserApartmentIndex'
 import NotFound from './pages/NotFound'
 import PropTypes from "prop-types"
 import { Nav, NavItem } from 'reactstrap'
@@ -82,6 +83,26 @@ class App extends React.Component {
     })
   }
 
+  deleteApartment = (id) => {
+    fetch(`http://localhost:3000/apartments/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("Something is wrong with your submission.")
+      }
+      return response.json()
+    })
+    .then(payload => {
+      this.apartmentIndex()
+    })
+    .catch(errors => {
+      console.log("delete errors:", errors)
+    })
+  }
 
   render() {
     const {
@@ -108,11 +129,23 @@ class App extends React.Component {
             render={() => <ApartmentIndex apartments={this.state.apartments} />}
           />
           <Route
+            path='/userApartmentIndex'
+            render={(props) => {
+              const usersApartments = this.state.apartments.filter(apartment => {
+                return apartment.user_id === current_user.id
+              })
+              return <UserApartmentIndex usersApartments={usersApartments} />
+            }}
+          />
+          <Route
             path='/apartmentShow/:id'
             render={(props) => {
               const id = parseInt(props.match.params.id);
               const foundapartment = this.state.apartments.find((apartment) => apartment.id === id);
-              return <ApartmentShow apartment={foundapartment} />;
+              return <ApartmentShow
+              apartment={foundapartment}
+              current_user={ current_user }
+              deleteApartment={this.deleteApartment}/>;
             }}
           />
           <Route
@@ -135,7 +168,8 @@ class App extends React.Component {
               const foundApartment = this.state.apartments.find((apartment) => apartment.id === id);
               return <ApartmentEdit
                       current_user={ current_user }
-                      apartment={foundApartment} editApartment={this.editApartment} />;
+                      apartment={foundApartment}
+                      editApartment={this.editApartment} />;
             }}
             />
           <Route component={ NotFound } />

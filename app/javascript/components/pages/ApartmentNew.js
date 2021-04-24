@@ -17,6 +17,7 @@ class ApartmentNew extends React.Component {
           bathrooms:0,
           pets:'',
           user_id:0,
+          image:'',
         },
 
         submitted: false,
@@ -122,6 +123,15 @@ class ApartmentNew extends React.Component {
                     type='text'
                     name='pets'
                     value={this.state.pets}
+                    onChange={this.handleChange}
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <Label for='image'>Add Apartment Image URL</Label>
+                  <Input
+                    type='text'
+                    name='image'
+                    value={this.state.image}
                     onChange={this.handleChange}
                   />
                 </FormGroup>
