@@ -37,6 +37,7 @@ apartments = [
   bathrooms:8,
   pets:'no',
   user_id:User.first.id,
+  image:'https://images.unsplash.com/photo-1495433324511-bf8e92934d90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1650&q=80',
 },
 {
   street:'2468 Hot Avenue',
@@ -49,6 +50,7 @@ apartments = [
   bathrooms:2,
   pets:'no',
   user_id:User.second.id,
+  image:'https://images.unsplash.com/photo-1499955085172-a104c9463ece?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80',
 },
 {
   street:'0863 Warm Lane',
@@ -61,6 +63,7 @@ apartments = [
   bathrooms:4,
   pets:'yes',
   user_id:User.third.id,
+  image:'https://images.unsplash.com/photo-1486304873000-235643847519?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80',
 },
 {
   street:'8246 Chilly Boulevard',
@@ -73,6 +76,7 @@ apartments = [
   bathrooms:5,
   pets:'yes',
   user_id:User.third.id,
+  image:'https://images.unsplash.com/photo-1534595038511-9f219fe0c979?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80',
 },
 ]
 apartments.each do |apartment|

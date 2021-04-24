@@ -36,7 +36,7 @@ class Header extends React.Component {
             <NavbarBrand href="/">Palm Breeze Apartments</NavbarBrand>
               <Nav className="mr-auto" navbar>
                 <NavItem>
-                  <NavLink href="/apartmentIndex/">Apartments</NavLink>
+                  <NavLink href="/apartmentIndex/">All Apartments</NavLink>
                 </NavItem>
               </Nav>
               <Nav>
@@ -45,6 +45,9 @@ class Header extends React.Component {
                   <Nav className="mr-auto" navbar>
                     <NavItem>
                       <NavLink href='/apartmentNew'>Add Listing</NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink href='/userApartmentIndex'>My Apartments</NavLink>
                     </NavItem>
                   </Nav>
                   <NavItem>

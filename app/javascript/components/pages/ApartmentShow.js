@@ -1,5 +1,5 @@
 import React from "react"
-import { Row, Col, Container, List } from 'reactstrap'
+import { Row, Col, Container, List, Button } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 
 
@@ -60,9 +60,22 @@ class ApartmentShow extends React.Component {
             </List>
           </Col>
         </Row>
-        <NavLink to={`/apartmentEdit/${this.props.apartment.id}`}>
-          Edit this apartment
-        </NavLink>
+        {user_id === this.props.current_user.id &&
+          <>
+            <NavLink to={`/apartmentEdit/${this.props.apartment.id}`}>
+              <Button style={{backgroundColor:'#d8c1aa',color:'#fc7173'}}>
+                  Edit this apartment
+              </Button>
+            </NavLink>
+            <NavLink to={"/userApartmentIndex"}>
+              <Button
+                style={{backgroundColor:'#d8c1aa',color:'#fc7173'}}
+                onClick={ () => this.props.deleteApartment(this.props.apartment.id) }>
+                  Delete this apartment
+              </Button>
+            </NavLink>
+          </>
+        }
       </Container>
       </React.Fragment>
     )
