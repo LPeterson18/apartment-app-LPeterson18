@@ -6,6 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+users = [
+{
+  email:'becca@email.com',
+  password:'12345678',
+},
+{
+  email:'dylan@email.com',
+  password:'9876543',
+},
+{
+  email:'wilt@email.com',
+  password:'24681012',
+},
+]
+users.each do |user|
+  User.create user
+  puts "Created user: #{user}"
+end
+
 apartments = [
 {
   street:'1624 Cold Street',
@@ -17,45 +36,46 @@ apartments = [
   bedrooms:6,
   bathrooms:8,
   pets:'no',
-  user_id:1,
+  user_id:User.first.id,
 },
 {
-  street:'5678 South Avenue',
-  city:'Fort Worth',
-  state:'TX',
-  manager:'Linda',
-  email:'linda@email.com',
-  price:'$1500',
-  bedrooms:1,
-  bathrooms:1,
-  pets:'no',
-  user_id:2,
-},
-{
-  street:'9876 West Lane',
-  city:'Duluth',
-  state:'MN',
-  manager:'Greg',
-  email:'greg@email.com',
-  price:'$2000',
-  bedrooms:2,
+  street:'2468 Hot Avenue',
+  city:'Palm Springs',
+  state:'FL',
+  manager:'Dylan',
+  email:'dylan@email.com',
+  price:'$700',
+  bedrooms:7,
   bathrooms:2,
+  pets:'no',
+  user_id:User.second.id,
+},
+{
+  street:'0863 Warm Lane',
+  city:'Topeka',
+  state:'KS',
+  manager:'Wilt',
+  email:'wilt@email.com',
+  price:'$2500',
+  bedrooms:4,
+  bathrooms:4,
   pets:'yes',
-  user_id:1,
-}
+  user_id:User.third.id,
+},
+{
+  street:'8246 Chilly Boulevard',
+  city:'Seattle',
+  state:'WA',
+  manager:'Wilt',
+  email:'wilt@email.com',
+  price:'$1200',
+  bedrooms:5,
+  bathrooms:5,
+  pets:'yes',
+  user_id:User.third.id,
+},
 ]
 apartments.each do |apartment|
   Apartment.create apartment
   puts "Created apartment: #{apartment}"
-end
-
-users = [
-{
-  id:,
-  email:''
-}
-]
-users.each do |user|
-  User.create user
-  puts "Created user: #{user}"
 end

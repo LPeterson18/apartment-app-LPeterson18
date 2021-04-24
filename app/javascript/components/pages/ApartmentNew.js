@@ -26,8 +26,6 @@ class ApartmentNew extends React.Component {
   handleChange = (e) => {
     let { form } = this.state;
     form[e.target.name] = e.target.value;
-    console.log(e.target.name);
-    console.log(form);
     form.user_id = this.props.current_user.id
     this.setState({ form: form });
   }
