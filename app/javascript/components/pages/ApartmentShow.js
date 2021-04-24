@@ -1,6 +1,6 @@
 import React from "react"
 import { Row, Col, Container, List } from 'reactstrap'
-
+import { NavLink } from 'react-router-dom'
 
 
 class ApartmentShow extends React.Component {
@@ -60,6 +60,9 @@ class ApartmentShow extends React.Component {
             </List>
           </Col>
         </Row>
+        <NavLink to={`/apartmentEdit/${this.props.apartment.id}`}>
+          Edit this apartment
+        </NavLink>
       </Container>
       </React.Fragment>
     )
