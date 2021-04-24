@@ -38,13 +38,15 @@ class Header extends React.Component {
                 <NavItem>
                   <NavLink href="/apartmentIndex/">Apartments</NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-                </NavItem>
               </Nav>
               <Nav>
                 { logged_in &&
                   <>
+                  <Nav className="mr-auto" navbar>
+                    <NavItem>
+                      <NavLink href='/apartmentNew'>Add Listing</NavLink>
+                    </NavItem>
+                  </Nav>
                   <NavItem>
                     <NavbarText>{current_user.email}</NavbarText>
                   </NavItem>
